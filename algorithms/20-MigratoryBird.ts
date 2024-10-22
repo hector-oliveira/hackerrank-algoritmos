@@ -1,12 +1,14 @@
 function migratoryBirds(arr: number[]): number {
-  let counts: { [key: number]: number } = {};
-  arr.forEach((num) => {
-    counts[num] = (counts[num] || 0) + 1;
-  });
+  const result = arr
+    .sort((a, b) => a - b)
+    .reduce((acc, curr) => {
+      acc[curr] = (acc[curr] || 0) + 1;
+      return acc;
+    }, {} as { [key: number]: number });
 
-  const maxValueRepeats = Math.max(...Object.values(counts));
-  const keys = Object.keys(counts).find(
-    (key) => counts[Number(key)] === maxValueRepeats
+  const quantityOfTimesMaxValueRepeats = Math.max(...Object.values(result));
+  const keys = Object.keys(result).find(
+    (numb) => result[Number(numb)] === quantityOfTimesMaxValueRepeats
   );
 
   return Number(keys);
