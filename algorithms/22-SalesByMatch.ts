@@ -1,5 +1,3 @@
-const paired = [10, 20, 20, 30, 10, 40, 10, 40, 25];
-
 function sockMerchant(n: number, ar: number[]): number {
   const result = ar.reduce((acc, curr) => {
     acc[curr] = (acc[curr] || 0) + 1;
