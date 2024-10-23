@@ -13,5 +13,3 @@ function sockMerchant(n: number, ar: number[]): number {
 
   return resp;
 }
-
-console.log(sockMerchant(7, paired));
